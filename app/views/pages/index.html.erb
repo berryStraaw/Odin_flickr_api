@@ -1,0 +1,20 @@
+<%= form_with url: "/pages", method: :get do |form| %>
+    <%= form.label :user_id, "User ID:" %>
+    <%= form.text_field :user_id %>
+    <%= form.submit "Search" %>
+  <% end %>
+  
+<% if @info %>
+    <% @info.each do |img| %>
+        <%= img.server %>
+        <img src="//live.staticflickr.com/<%= img.server %>/<%= img.id %>_<%= img.secret %>_n.jpg" 
+        <br>
+    <% end %>
+<% end %>
+
+#<img src="//live.staticflickr.com/65535/51822827137_ff4e658bf4_n.jpg" 
+#<photo id="51822827137"
+#owner="194818845@N02"
+#server 65535
+#secret="ff4e658bf4"
+#class="low-res-photo" alt="IMG_20211219_154209_606 | by marius1357975" style="display: none;" width="698" hidden="hidden" height="698">
